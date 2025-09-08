@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EU Trademark Search - EUIPO</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🔍 EU Trademark Search</h1>
+        <p class="subtitle">
+          Search the European Union Intellectual Property Office (EUIPO)
+          trademark database
+        </p>
+      </header>
+
+      <main>
+        <div class="search-section">
+          <form id="searchForm" class="search-form">
+            <div class="input-group">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Enter trademark name to search..."
+                required
+                autocomplete="off"
+              />
+              <button type="submit" id="searchBtn">
+                <span class="btn-text">Search</span>
+                <span class="spinner" id="spinner"></span>
+              </button>
+            </div>
+            <div class="search-options">
+              <div class="basic-options">
+                <label for="pageSize">Results per page:</label>
+                <select id="pageSize">
+                  <option value="10">10</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                </select>
+              </div>
+
+              <div class="wildcard-options">
+                <h4>Search Types:</h4>
+                <div class="checkbox-group">
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="exactMatch" checked />
+                    <span class="checkmark"></span>
+                    Exact Match
+                  </label>
+
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="containsMatch" checked />
+                    <span class="checkmark"></span>
+                    Contains (*name*)
+                  </label>
+
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="startsWithMatch" />
+                    <span class="checkmark"></span>
+                    Starts With (name*)
+                  </label>
+
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="endsWithMatch" />
+                    <span class="checkmark"></span>
+                    Ends With (*name)
+                  </label>
+
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="wordBoundaryMatch" />
+                    <span class="checkmark"></span>
+                    Word Boundary
+                  </label>
+
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="spellingVariations" />
+                    <span class="checkmark"></span>
+                    Spelling Variations
+                  </label>
+
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="phoneticMatch" />
+                    <span class="checkmark"></span>
+                    Phonetic Similar
+                  </label>
+
+                  <div
+                    class="similarity-controls"
+                    id="similarityControls"
+                    style="display: none"
+                  >
+                    <label class="slider-label">
+                      <span>Similarity Threshold:</span>
+                      <div class="slider-container">
+                        <input
+                          type="range"
+                          id="similaritySlider"
+                          min="0"
+                          max="100"
+                          value="70"
+                          class="similarity-slider"
+                        />
+                        <div class="slider-values">
+                          <span class="slider-min">Loose (0%)</span>
+                          <span class="slider-value" id="sliderValue">70%</span>
+                          <span class="slider-max">Exact (100%)</span>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="pluralMatch" />
+                    <span class="checkmark"></span>
+                    Plural/Singular
+                  </label>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div
+          id="errorMessage"
+          class="error-message"
+          style="display: none"
+        ></div>
+
+        <div id="resultsSection" class="results-section" style="display: none">
+          <div class="results-header">
+            <h2 id="resultsTitle">Search Results</h2>
+            <div class="results-info">
+              <span id="resultsCount"></span>
+              <div class="pagination">
+                <button id="prevPage" disabled>Previous</button>
+                <span id="pageInfo"></span>
+                <button id="nextPage" disabled>Next</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="resultsContainer" class="results-container">
+            <!-- Results will be populated here -->
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>
+          Data provided by
+          <a href="https://euipo.europa.eu" target="_blank">EUIPO</a> • This is
+          a demonstration application
+        </p>
+      </footer>
+    </div>
+
+    <!-- Trademark Detail Modal -->
+    <div id="modal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modalContent">
+          <!-- Modal content will be populated here -->
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
