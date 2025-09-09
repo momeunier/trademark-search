@@ -248,9 +248,14 @@ app.get("/health", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-  console.log("Environment variables loaded:", {
-    CLIENT_ID: CLIENT_ID ? "Set" : "Not set",
-    CLIENT_SECRET: CLIENT_SECRET ? "Set" : "Not set",
+  console.log(
+    `🛡️  OBP - Online Brand Protection server running on http://localhost:${PORT}`
+  );
+  console.log(
+    `🌐 Brand protection platform ready for trademark intelligence analysis`
+  );
+  console.log("EUIPO API credentials:", {
+    CLIENT_ID: CLIENT_ID ? "✅ Configured" : "❌ Missing",
+    CLIENT_SECRET: CLIENT_SECRET ? "✅ Configured" : "❌ Missing",
   });
 });

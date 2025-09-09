@@ -3,16 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EU Trademark Search - EUIPO</title>
+    <title>
+      OBP - Online Brand Protection | Trademark Intelligence Platform
+    </title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
       <header>
-        <h1>🔍 EU Trademark Search</h1>
+        <h1>🛡️ OBP</h1>
+        <div class="brand-tagline">Online Brand Protection</div>
         <p class="subtitle">
-          Search the European Union Intellectual Property Office (EUIPO)
-          trademark database
+          Advanced trademark intelligence and brand protection platform powered
+          by EUIPO data
         </p>
       </header>
 
@@ -23,12 +26,12 @@
               <input
                 type="text"
                 id="searchInput"
-                placeholder="Enter trademark name to search..."
+                placeholder="Enter brand name to protect..."
                 required
                 autocomplete="off"
               />
               <button type="submit" id="searchBtn">
-                <span class="btn-text">Search</span>
+                <span class="btn-text">Analyze</span>
                 <span class="spinner" id="spinner"></span>
               </button>
             </div>
@@ -44,7 +47,7 @@
               </div>
 
               <div class="wildcard-options">
-                <h4>Search Types:</h4>
+                <h4>Protection Analysis Types:</h4>
                 <div class="checkbox-group">
                   <label class="checkbox-label">
                     <input type="checkbox" id="exactMatch" checked />
@@ -94,7 +97,7 @@
                     style="display: none"
                   >
                     <label class="slider-label">
-                      <span>Similarity Threshold:</span>
+                      <span>Brand Similarity Threshold:</span>
                       <div class="slider-container">
                         <input
                           type="range"
@@ -132,7 +135,7 @@
 
         <div id="resultsSection" class="results-section" style="display: none">
           <div class="results-header">
-            <h2 id="resultsTitle">Search Results</h2>
+            <h2 id="resultsTitle">Brand Protection Analysis</h2>
             <div class="results-info">
               <span id="resultsCount"></span>
               <div class="pagination">
@@ -151,9 +154,9 @@
 
       <footer>
         <p>
-          Data provided by
-          <a href="https://euipo.europa.eu" target="_blank">EUIPO</a> • This is
-          a demonstration application
+          <strong>OBP - Online Brand Protection</strong> • Powered by
+          <a href="https://euipo.europa.eu" target="_blank">EUIPO</a> data •
+          Professional trademark intelligence platform
         </p>
       </footer>
     </div>

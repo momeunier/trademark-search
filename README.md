@@ -1,15 +1,19 @@
-# EU Trademark Search Application
+# OBP - Online Brand Protection
 
-A simple web application to search the European Union Intellectual Property Office (EUIPO) trademark database using their official API.
+🛡️ **Advanced trademark intelligence and brand protection platform** powered by EUIPO data. OBP provides comprehensive brand monitoring, trademark analysis, and intellectual property protection services for businesses and legal professionals.
 
 ## Features
 
-- 🔍 Search trademarks by name using wildcard matching
-- 📊 View detailed trademark information including status, dates, and classifications
-- 📄 Paginated results with customizable page sizes
-- 🎨 Modern, responsive UI design
-- 🔐 OAuth2 client credentials authentication
-- ⚡ Real-time search with error handling
+- 🛡️ **Brand Protection Analysis** - Advanced trademark similarity detection
+- 🔍 **Multi-Pattern Search** - Exact match, phonetic, spelling variations, and fuzzy matching
+- 📊 **Trademark Intelligence** - Detailed trademark information, status tracking, and classifications
+- 🎯 **Similarity Scoring** - Levenshtein distance-based brand similarity analysis
+- 📄 **Smart Pagination** - Efficient browsing of large result sets
+- 🎨 **Modern Interface** - Vibrant, professional UI with real-time interactions
+- 🔐 **Secure API Integration** - OAuth2 authentication with EUIPO
+- ⚡ **Real-time Analysis** - Instant brand protection insights with comprehensive error handling
+- 🖼️ **Visual Trademark Support** - Image display for figurative marks
+- 📱 **Responsive Design** - Optimized for desktop and mobile devices
 
 ## Prerequisites
 
@@ -42,11 +46,27 @@ A simple web application to search the European Union Intellectual Property Offi
 
 ## Usage
 
+### Production
+
 1. Start the application:
 
    ```bash
    npm start
    ```
+
+### Development
+
+1. Start the development server with automatic restarts:
+
+   ```bash
+   npm run dev
+   ```
+
+   The development server uses nodemon and will automatically restart when you make changes to:
+
+   - `server.js`
+   - Files in the `public/` directory (HTML, CSS, JS)
+   - JSON configuration files
 
 2. Open your browser and navigate to `http://localhost:3000`
 

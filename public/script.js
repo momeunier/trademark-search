@@ -84,7 +84,7 @@ class TrademarkSearchApp {
 
     const query = this.searchInput.value.trim();
     if (!query) {
-      this.showError("Please enter a trademark name to search.");
+      this.showError("Please enter a brand name to analyze for protection.");
       return;
     }
 
@@ -159,10 +159,12 @@ class TrademarkSearchApp {
     this.totalElements = filteredTrademarks.length;
     this.totalPages = Math.ceil(this.totalElements / this.pageSize);
 
-    this.resultsTitle.textContent = `Search Results for "${this.currentQuery}"`;
-    this.resultsCount.textContent = `${this.totalElements} trademark(s) found${
+    this.resultsTitle.textContent = `Brand Protection Analysis: "${this.currentQuery}"`;
+    this.resultsCount.textContent = `${this.totalElements} potential conflict${
+      this.totalElements !== 1 ? "s" : ""
+    } identified${
       this.phoneticMatchCb.checked
-        ? ` (filtered by ${this.similaritySlider.value}% similarity)`
+        ? ` (filtered by ${this.similaritySlider.value}% similarity threshold)`
         : ""
     }`;
 
@@ -175,8 +177,8 @@ class TrademarkSearchApp {
     if (!trademarks || trademarks.length === 0) {
       this.resultsContainer.innerHTML = `
                 <div class="no-results">
-                    <h3>No trademarks found</h3>
-                    <p>Try adjusting your search terms or check the spelling.</p>
+                    <h3>🛡️ No Brand Conflicts Detected</h3>
+                    <p>Your brand appears to be clear in this analysis. Consider expanding your search criteria or try different variations.</p>
                 </div>
             `;
       return;
@@ -259,6 +261,9 @@ class TrademarkSearchApp {
                            ? `<div class="similarity-score" title="Similarity to '${this.currentQuery}'">${similarityScore}% match</div>`
                            : ""
                        }
+                       <button class="find-threats-btn" onclick="event.stopPropagation(); window.open('https://pro.urlscan.io/result/d48e4171-1c4c-4820-9b58-4771d6111732', '_blank')" title="Analyze potential threats">
+                         🔍 Find threats
+                       </button>
                      </div>
                  </div>
                 
