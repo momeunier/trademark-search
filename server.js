@@ -14,8 +14,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // EUIPO API configuration
-const EUIPO_BASE_URL = "https://api-sandbox.euipo.europa.eu/trademark-search";
-const EUIPO_AUTH_URL = "https://auth-sandbox.euipo.europa.eu/oidc/accessToken";
+const EUIPO_BASE_URL = "https://api.euipo.europa.eu/trademark-search";
+const EUIPO_AUTH_URL = "https://auth.euipo.europa.eu/oidc/accessToken";
 const CLIENT_ID = process.env.KEY;
 const CLIENT_SECRET = process.env.SECRET;
 

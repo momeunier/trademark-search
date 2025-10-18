@@ -261,7 +261,7 @@ class TrademarkSearchApp {
                            ? `<div class="similarity-score" title="Similarity to '${this.currentQuery}'">${similarityScore}% match</div>`
                            : ""
                        }
-                       <button class="find-threats-btn" onclick="event.stopPropagation(); window.open('https://pro.urlscan.io/result/d48e4171-1c4c-4820-9b58-4771d6111732', '_blank')" title="Analyze potential threats">
+                       <button class="find-threats-btn" onclick="event.stopPropagation(); window.open('https://urlscan.io/result/d48e4171-1c4c-4820-9b58-4771d6111732', '_blank')" title="Analyze potential threats">
                          🔍 Find threats
                        </button>
                      </div>
